@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>BATSIGNAL</title>
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" >
+    <script src="/scripts/sources/jquery.min.js"></script>
+    <script src="/scripts/batpicture.js"></script>
+
+
+</head>
+<body>
+
+        <div class="container">
+            <div class="'page-header text-center">
+                <h1><i class="fa fa-hand-peace-o"></i> Welcome <%= user.local.username %></h1>
+                <a href="/logout" class="btn btn-default btn-sm"><i class="fa fa-sign-out">Log out</i></a>
+            </div>
+            <br>
+            <div class="row features">
+                <!--LOCAL INFO-->
+                <!--<div class="col-sm-6">-->
+                    <div class="well font">
+                        <h3><span class="fa fa-user-secret"></span> <%= user.local.username %></h3>
+                            <div class="stuff">
+                                <!--<img src="http://orig04.deviantart.net/42db/f/2012/068/d/1/d112739bfdc4056be117dbce377d1970-d4s6ybn.jpg" alt="MyPicture" style = "width:130px; height:150px">-->
+                                <div class="pull-left">
+
+                                    <img class="profile-pic" src="/images/nightwing.jpg" />
+                                    <button class="btn btn-info btn-xs upload-button">Profile Picture</button>
+                                        <div class="hideinput">
+                                    <input class="file-upload" type="file" accept="image/*;capture=camera"/>
+                                        </div>
+                                            <!--<img src="/images/nightwing.jpg" alt="My Picture" style="width:130px;height:150px">-->
+                                 </div>
+                            <br>
+
+                        <div class="pull-right">
+                            <ul class="list-unstyled">
+                                <li><a href="/add_friends" class="btn btn-primary"><i class="fa fa-plus-circle"> Add Friends</i></a></li>
+                                <br>
+                                <li><a href="/batsignal" class="btn btn-warning"><i class="fa fa-bullhorn"> Send Batsignal</i></a></li>
+                            </ul>
+                        </div>
+                            </div>
+
+                    </div>
+                <!--</div>-->
+            </div>
+        </div>
+
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="Batsignal">
+<head>
+    <title>BATSIGNAL</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="/scripts/sources/angular.min.js"></script>
+    <script src="/scripts/MainController.js"></script>
+
+</head>
+
+
+<body ng-controller="MainController">
+<div>
+<div class="container-fluid">
+    <div class="'page-header text-center">
+        <h1><i class="fa fa-fighter-jet faa-passing animated"></i> Send your BATSIGNAL</h1>
+        <a href="/logout" class="btn btn-default btn-sm"><i class="fa fa-sign-out">Log out</i></a>
+    </div>
+    <br>
+    <div class="row">
+        <!--LOCAL INFO-->
+        <!--<div class="col-sm-6">-->
+        <div class="well font mainplace">
+            <div class="form-group">
+
+                <!--GET DATA BUTTON-->
+                <div>
+                    <button class="btn btn-warning btn-sm" ng-click="getData()">Get Bat-Friends</button>
+
+                    <div ng-cloak class="pad" ng-repeat="batfriend in friendoes">
+
+                        <input ng-click="gettingEmail()" type="radio" name="friends" ng-model="radioValue" value="{{batfriend.friendemail}}"> {{batfriend.friendname}}
+                        <p>{{radioValue}}</p>
+
+                    </div>
+                </div>
+                <br>
+                <label for="comment">Bat-a-Message:</label>
+
+                <!--TRYING TO GET THE MESSAGE-->
+
+                <textarea class="form-control" rows="5" id="inputID" ng-model="batmessage"></textarea><br>
+
+
+
+
+
+                <div class="text-center">
+                    <!--DEMOOOOOO-->
+                    <div id="batelement"></div>
+                    <!--Need the route to confirmation  -->
+
+
+
+
+                    <button ng-click="sendBatsignal()" class="btn btn-danger faa-parent animated-hover"><i class="fa fa-bell faa-ring"></i> SEND BATSIGNAL</button>
+                    <a href="/profile" class="btn btn-primary"><i class="fa fa-user-secret"> BAT-Profile</i></a>
+
+                <!--CHANGE TO ROUTE TO CONFIRMATION PAGE-->
+
+
+                </div>
+
+
+
+                <!--MAPHOLDERRRRR-->
+                <div id="mapholder"></div>
+                <!--<div id="finalMap"></div>-->
+
+                <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+
+
+
+            </div>
+
+        </div>
+        <!--</div>-->
+    </div>
+
+</div>
+</div>
+</body>
+</html>

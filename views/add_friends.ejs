@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="Batsignal">
+<head>
+    <title>BATSIGNAL</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="/scripts/sources/angular.min.js"></script>
+    <!--<script src="/scripts/angular.min.js.map"></script>-->
+    <script src="/scripts/MainController.js"></script>
+
+</head>
+<body>
+    <div ng-controller ='MainController'>
+
+        <div class="container-fluid">
+            <div class="'page-header text-center">
+                <h1><span class="fa fa-users"></span> Add your BATFRIENDS</h1>
+                <a href="/logout" class="btn btn-default btn-sm"><i class="fa fa-sign-out">Log out</i></a>
+            </div>
+            <br>
+            <div class="row">
+                <!--LOCAL INFO-->
+                <!--<div class="col-sm-6">-->
+                    <div class="well font mainplace">
+                        <form>
+                            <label>Friend's Name: </label><br>
+                            <input type="text" ng-model="friendname"><br>
+
+                            <label>Friend's Email: </label><br>
+                            <input type="email" ng-model="friendemail"><br><br>
+                            <!--<div class="text-center">-->
+                                <!--<a href="/friendsconfirm" ng-click="sendData()" class="btn btn-warning"><i class="fa fa-user-plus"></i> Bat-a-ADD</a><br>-->
+                                <!--<a href="/profile" class="btn btn-primary"><i class="fa fa-user-secret"> BAT-Profile</i></a>-->
+                            <!--</div>-->
+                        </form>
+                        <div class="text-center">
+                            <a href="/friendsconfirm" ng-click="sendData()" class="btn btn-warning"><i class="fa fa-user-plus"></i>Bat-a-ADD</a>
+                            <a href="/profile" class="btn btn-primary"><i class="fa fa-user-secret"> BAT-Profile</i></a>
+                        </div>
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

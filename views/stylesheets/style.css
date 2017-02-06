@@ -1,0 +1,58 @@
+body {
+
+    background-color: black;
+    color: #CCDDDD;
+}
+
+.mainplace {
+    display:block;
+    margin: 0 auto;
+}
+
+.pad {
+    padding-top: 10px;
+}
+
+.features .well{
+    height:350px;
+ }
+
+
+.friends-buttons{
+    display: inline;
+}
+
+.font {
+    color:#292C2C;
+    background-color: #CFCFCF;
+
+}
+
+/*profile picture*/
+
+
+.profile-pic {
+    width: 160px;
+    height: 200px;
+    display: block;
+}
+
+.hideinput {
+    display: none;
+}
+
+/*//MULTER*/
+  .box{
+      border: 1px solid #ededed;
+      border-bottom: 0.5px solid #777e7e;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 10px;
+  }
+.thumbnail{
+    object-fit: cover;
+    object-position: center;
+    height: 100px;
+    width: 100px;
+}

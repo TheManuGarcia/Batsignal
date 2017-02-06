@@ -9,4 +9,4 @@ Technologies used:
 - EJS Templates
 - Bootstrap
 
-<img src=""/>
+<img src="https://github.com/TheManuGarcia/Batsignal/blob/master/views/images/BatsignalScreenshot.png"/>

@@ -7,11 +7,7 @@ var router = express.Router();
 var flash = require('connect-flash');
 var path = require('path');
 var passport = require('passport');
-//var friendSchema = require('./models/fakeSchema');
-//var friendSchema = require('./models/user');
 
-///JADEEEE
-var Uploads = require('../app/models/upload');
 
     //HOME PAGE
 
@@ -62,19 +58,6 @@ var Uploads = require('../app/models/upload');
 
     });
 
-    ///JADEPROFILE
-
-    router.get('/jadeprofile', isLoggedIn, function(req,res){
-        Uploads.find({}, function (err, uploads) {
-            if (err) {
-                next(err);
-            } else {
-                res.render('profile2.jade', {uploads: uploads, user: req.user});
-                //get the user out of session and pass to template
-            }
-        });
-
-    });
 
 //=======/////////+++++++++==
 
@@ -106,13 +89,6 @@ var Uploads = require('../app/models/upload');
        res.render('add_friends.ejs');
     });
 
-//JADE PROFILE
-
-router.get('/jadeprofile', function (req, res){
-    res.render('profile2.jade');
-})
-
-
 
     //==== SEND BATSIGNAL ===\\
     router.get('/batsignal', function(req,res){
@@ -133,7 +109,7 @@ router.get('/jadeprofile', function (req, res){
     //====== SEND EMAIL ========\\
     router.post('/sendbatemail', function(req, res){
         console.log(req.body);
-        var api_key = "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";
+        var api_key = "InsertYOURKey";
 
         /* MAIL INFORMATION
          * Fill in the relevant information below
@@ -152,10 +128,9 @@ router.get('/jadeprofile', function (req, res){
         var text_body = "Hello I hope this reaches you";
 
     // HTML BODY
-        var html_body = "<p>" + req.body.message + "</p>" + "<img src='https://maps.googleapis.com/maps/api/staticmap?&zoom=14&size=400x300&maptype=roadmap&markers=color:red%7Clabel:C%7C" + req.body.myLocation +"&key=AIzaSyDuL9tcP7WKdOIPRkoNEmLSJz3ule96YG8'/>";
+        var html_body = "<p>" + req.body.message + "</p>" + "<img src='https://maps.googleapis.com/maps/api/staticmap?&zoom=14&size=400x300&maptype=roadmap&markers=color:red%7Clabel:C%7C" + req.body.myLocation +"&key=KeYNumber'/>";
         console.log(html_body);
-        //var html_body = "<table style=\"border: solid 1px #000; background-color: #666; font-family: verdana, tahoma, sans-serif; color: #fff;\"> <tr> <td> <h2>Hello Batfriend,</h2> <p>You have a new Batsignal:</p> <p> + "req.body.message" + </p> <p>Thank you for reading this test message.</p> Love,<br/> Your friends at SendGrid</p> <p> <img src=\"http://cdn1.sendgrid.com/images/sendgrid-logo.png\" alt=\"SendGrid!\" /> </td> </tr> </table>";
-        //var html_body = "<table style=\"border: solid 1px #000; background-color: #666; font-family: verdana, tahoma, sans-serif; color: #fff;\"> <tr> <td> "<p>" + "req.body.message" + "</p>" + "<img src='https://maps.googleapis.com/maps/api/staticmap?&zoom=14&size=400x300&maptype=roadmap&markers=color:red%7Clabel:C%7C" + req.body.myLocation +"&key=AIzaSyDuL9tcP7WKdOIPRkoNEmLSJz3ule96YG8'/>" </td> </tr> </table>";
+
         /* CREATE THE MAIL OBJECT
          *===========================================*/
     // This will send your email via SendGrid's Web API.  If you
